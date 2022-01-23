@@ -1,0 +1,12 @@
+.element__place {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  padding: 25px 20px 25px 21px;
+}
