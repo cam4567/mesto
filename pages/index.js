@@ -6,7 +6,7 @@ let profileName = document.querySelector('.profile__name');     //перемен
 let profileAbout = document.querySelector('.profile__about');   //переменная о себе профиля
 let inputName = document.querySelector('.popup__input_edit_name');  //input form NAME
 let inputAbout = document.querySelector('.popup__input_edit_about');  //input form About
-let formEditProfile = document.querySelector('.form_edit-profile');
+let formEditProfile = document.querySelector('.form-edit-profile');
 
 // функция открытия popup
 function openPopupProfile() {
