@@ -12,6 +12,7 @@
 }
 
 .profile__button-edit:hover {
+  transition: opacity 1s ease;
   opacity: 0.6;
 }
 
