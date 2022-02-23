@@ -33,8 +33,10 @@
         <button type="button" aria-label="закрыть" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form name="форма редактирования профиля" class="form form-edit-profile">
-          <input name="name" required type="text" placeholder="Имя" class="form__input form__input_edit_name">
-          <input name="about" required type="text" placeholder="О себе" class="form__input form__input_edit_about">
+          <input id="name" name="name" required minlength="2" maxlength="40" type="text" placeholder="Имя" class="form__input form__input_edit_name">
+          <span class="form__error-message form__error-message_input-name"></span>
+          <input id="about" name="about" required minlength="2" maxlength="200" type="text" placeholder="О себе" class="form__input form__input_edit_about">
+          <span class="form__error-message form__error-message_input-about"></span>
           <button type="submit" aria-label="сохранить" class="popup__save-button">Сохранить</button>
         </form>
       </div>
@@ -44,9 +46,11 @@
         <button type="button" aria-label="Закрыть" class="button popup__close-button popup__close-add-element"></button>
         <form name="Форма добавления элемента" class="form form-add-element">
           <h3 class="popup__title">Новое место</h3>
-          <input name="name" required type="text" placeholder="Название" class="form__input form__input_type_name">
+          <input name="place" required minlength="2" maxlength="30" type="text" placeholder="Название" class="form__input form__input_type_name" >
+          <span class="form__error-message form__error-message_input-place"></span>
           <input name="src" required type="url" placeholder="Ссылка на картинку" class="form__input form__input_type_url">
-          <input type="submit" aria-label="создать" class="button popup__save-button" value="Создать">
+          <span class="form__error-message form__error-message_input-src"></span>
+          <button type="submit" aria-label="создать" class="popup__save-button">Создать</button>
         </form>
       </div>
     </div>
@@ -69,5 +73,6 @@
     </template>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
