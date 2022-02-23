@@ -33,7 +33,7 @@ buttonPopupClose.addEventListener('click', () => closePopup(popupEditProfile));
 
 //cards js load
 function renderCards() {
-  initialCards.forEach(renderCard);
+  initialCards.forEach(appendCard);
 };
 renderCards();
 
@@ -49,10 +49,13 @@ function renderElement(element) {
   return initialElement;
 };
 
-function renderCard(element) {
-  const elementCreated = renderElement(element)
-  elementList.prepend(elementCreated)
+function appendCard(element) {
+  elementList.append(renderElement(element));
 }
+function prependCard(cardInfo) {
+  elementList.prepend(renderElement(cardInfo));
+}
+
 //функция редактирования профиля
 function openpopupEditProfile(){
   inputName.value = profileName.textContent;
@@ -128,7 +131,7 @@ function newCard(evt) {
       link: newItemImgInput.value,
   };
   closePopup(popupAddForm);
-  renderCard(cardInfo);
+  prependCard(cardInfo);
 }
 // функция submit profile
 function formSubmitProfile(evt) {
