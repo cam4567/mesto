@@ -29,7 +29,7 @@ const hasInvalidInput = (inputItems)  => {
 };
 
 //кнопка submit
-const SubmitButtonActivation = ({ disabledButtonClass }, inputItems, button) => {
+const submitButtonActivation = ({ disabledButtonClass }, inputItems, button) => {
     if (hasInvalidInput(inputItems)) {
         button.setAttribute('disabled', '');
         button.classList.add(disabledButtonClass);
@@ -46,7 +46,7 @@ function addInputListener({inputSelector, popupSaveButtonSelector, ...rest}, for
     inputItems.forEach(inputItem => {
         inputItem.addEventListener('input', function() {
             checkInputValidity(rest, form, inputItem);
-            SubmitButtonActivation(rest, inputItems, button);
+            submitButtonActivation(rest, inputItems, button);
         });
     });
 };

@@ -57,7 +57,7 @@ function prependCard(cardInfo) {
 }
 
 //функция редактирования профиля
-function openpopupEditProfile(){
+function openPopupEditProfile(){
   inputName.value = profileName.textContent;
   inputAbout.value = profileAbout.textContent;
   resetError(popupEditProfile);
@@ -65,7 +65,7 @@ function openpopupEditProfile(){
   openPopup(popupEditProfile);
 }
 // функция добавления карточки
-function openpopupAddForm() {
+function openPopupAddForm() {
   newItemNameInput.value = '';
   newItemImgInput.value = '';
   const form = popupAddForm.querySelector('.form');
@@ -118,7 +118,7 @@ const handlerOverlayClick = (event) => {
 };
 // popup esc close
 const handlerEscButton = (event) => {
-  if (event.keyCode === 27) {
+  if (event.key === 'Escape') {
     closePopup();
   };
 };
@@ -134,7 +134,7 @@ function newCard(evt) {
   prependCard(cardInfo);
 }
 // функция submit profile
-function formSubmitProfile(evt) {
+function submitFormProfile(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileAbout.textContent = inputAbout.value;
@@ -155,12 +155,12 @@ function addListeners(el) {
   el.querySelector('.element__image').addEventListener('click', openImgPopup);
 };
 //open popup button listeners
-buttonEditProfile.addEventListener('click', openpopupEditProfile);
-openButtonAdd.addEventListener('click', openpopupAddForm);
+buttonEditProfile.addEventListener('click', openPopupEditProfile);
+openButtonAdd.addEventListener('click', openPopupAddForm);
 //popup
 popupEditProfile.addEventListener('click', handlerOverlayClick);
 popupAddForm.addEventListener('click', handlerOverlayClick);
 popupFullImg.addEventListener('click', handlerOverlayClick);
 //submit listeners
 formElementAdd.addEventListener('submit', newCard);
-formEditProfile.addEventListener('submit', formSubmitProfile);
+formEditProfile.addEventListener('submit', submitFormProfile);
